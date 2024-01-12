@@ -3,14 +3,24 @@ import Header from './Components/Header'
 import Screen from './Components/Screen'
 import List from './Components/List'
 import Footer from './Components/Footer'
+import { useState, useEffect } from 'react'
 
 function App() {
+  const [result, setResult] = useState()
+  const [saved, setSaved] = useState(() => {
+    const savedRecords = JSON.parse(localStorage.getItem('savedRecords'));
+    return savedRecords || []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('savedRecords', JSON.stringify(saved));
+  }, [saved]);
 
   return (
     <>
       <Header />
-      <Screen />
-      <List />
+      <Screen result={result} setResult={setResult} saved={saved} setSaved={setSaved} />
+      <List result={result} setResult={setResult} saved={saved} setSaved={setSaved} />
       <Footer />
     </>
   )

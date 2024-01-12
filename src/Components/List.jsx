@@ -1,17 +1,32 @@
-export default function List() {
+import PropTypes from 'prop-types';
+
+export default function List({ saved, setSaved }) {
+    const handleClick = (e, index) => {
+        e.preventDefault()
+        setSaved(currentSaved => currentSaved.filter((record, i) => i != index))
+    }
+
     return (
         <div className="listContainer">
             <h3 className="listTitle">saved</h3>
             <div className="savedResults">
-                <div className="resultCard">
-                    <p>100 miles &#8594; 160km</p>
-                    <img src="/public/imgs/iconmonstr-x-mark-lined-240.png" alt="delete_logo" width="8.57px" height="8.57px" />
-                </div>
-                <div className="resultCard">
-                    <p>100 miles &#8594; 160km</p>
-                    <img src="/public/imgs/iconmonstr-x-mark-lined-240.png" alt="delete_logo" width="10px" height="10px" />
-                </div>
+                {saved.map((record, index) => {
+                    return (
+                        <div key={index} className="resultCard">
+                            <p>{record[0]} {record[1]} &#8594; {record[2]} {record[3]}</p>
+                            <a href="" onClick={(e) => handleClick(e, index)}>
+                                <img src="/public/imgs/iconmonstr-x-mark-lined-240.png" alt="delete_logo" width="8.57px" height="8.57px" />
+                            </a>
+                        </div>
+                    )
+
+                })}
             </div>
         </div>
     )
+}
+
+List.propTypes = {
+    saved: PropTypes.array,
+    setSaved: PropTypes.func
 }
