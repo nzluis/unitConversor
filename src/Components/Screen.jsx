@@ -39,11 +39,11 @@ export default function Screen({ result, setResult, saved, setSaved }) {
     useEffect(() => {
         setFactor(conversion[modesIndex])
         setToggle(false)
-    }, [selectedMode])
+    }, [selectedMode]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         setResult((Math.round((inputValue * factor) * 100) / 100).toFixed(2))
-    }, [factor, inputValue])
+    }, [factor, inputValue]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className="screenContainer">
