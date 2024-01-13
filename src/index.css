@@ -43,7 +43,6 @@ body {
   line-height: 36px;
   letter-spacing: 0em;
   text-align: left;
-
 }
 
 #selectForm {
@@ -181,7 +180,6 @@ body {
 
 .footer {
   padding: 5px 0 5px 0;
-
   display: flex;
   justify-content: center;
   gap:65px;
@@ -196,7 +194,6 @@ body {
   line-height: 18px;
   letter-spacing: 0em;
   color: white;
-
 }
 
 input::-webkit-outer-spin-button,
@@ -212,12 +209,6 @@ input::-webkit-inner-spin-button {
 
   #selectForm>select {
     padding-right: 0em;
-  }
-  
-  .inputGroup {
-
-  }
-  .selectMeasure {
   }
 
   .inputLine {
