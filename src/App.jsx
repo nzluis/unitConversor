@@ -20,7 +20,7 @@ function App() {
     <>
       <Header />
       <Screen result={result} setResult={setResult} saved={saved} setSaved={setSaved} />
-      <List result={result} setResult={setResult} saved={saved} setSaved={setSaved} />
+      <List saved={saved} setSaved={setSaved} />
       <Footer />
     </>
   )
