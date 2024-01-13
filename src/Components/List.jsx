@@ -15,7 +15,7 @@ export default function List({ saved, setSaved }) {
                         <div key={index} className="resultCard">
                             <p>{record[0]} {record[1]} &#8594; {record[2]} {record[3]}</p>
                             <a href="" onClick={(e) => handleClick(e, index)}>
-                                <img src="/public/imgs/iconmonstr-x-mark-lined-240.png" alt="delete_logo" width="8.57px" height="8.57px" />
+                                <img src="/public/imgs/iconmonstr-x-mark-lined-240.png" alt="delete_logo" width="12px" height="12px" />
                             </a>
                         </div>
                     )

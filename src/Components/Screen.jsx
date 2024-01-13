@@ -67,16 +67,18 @@ export default function Screen({ result, setResult, saved, setSaved }) {
                             </select>
                         </form>
                         <a onClick={handleSwitch}>
-                            <img src="/public/imgs/exchange-svgrepo-com.svg" alt="exchange_logo" width="15.5px" height="13.5px" />
+                            <img src="/public/imgs/exchange-svgrepo-com2.svg" alt="exchange_logo" width="24px" height="24px" />
                         </a>
                     </div>
                     <div className='inputGroup'>
-                        <input placeholder="number here" type="number" name="numberToConvert" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                        <div className="inputLine">
+                            <input placeholder="number here" type="number" name="numberToConvert" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                        </div>
                         <p> {toggle ? units[1] : units[0]}</p>
                     </div>
                 </div>
                 <div className="displayRow">
-                    <button onClick={handleLike}>
+                    <button className="saveButton" onClick={handleLike}>
                         <img src="/public/imgs/iconmonstr-favorite-6-240.png" alt="likes_logo" width="24px" height="24px" />
                     </button>
                     <div className='resultGroup'>
