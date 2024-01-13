@@ -202,10 +202,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 747px) {
   body {
-    margin:auto 1em;
+    margin: auto 13px
   }
+}
+
+@media only screen and (max-width: 580px) {
 
   #selectForm>select {
     padding-right: 0em;
